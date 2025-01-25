@@ -1,6 +1,6 @@
-# HR BOT
+# Resume Analyser
 Download Final Coding and follow the procedure 
-An automated system to analyze resumes against job descriptions (JDs) and generate detailed reports, including scores, strengths, weaknesses, and analysis in both PDF and CSV formats. The outputs are zipped together for easy download.
+An automated system to analyze resumes against job descriptions (JDs) and generate detailed reports, including scores, strengths, weaknesses, and analysis in PDF formats. The outputs are zipped together for easy download.
 
 ## Features
 
