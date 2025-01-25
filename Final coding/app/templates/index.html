@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer</title>
+    <link rel="stylesheet" href="static/stylish.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body >
+    <script>
+        // Function to display API response
+    function displayApiResponse(response) {
+        const responseContainer = document.getElementById("api-response");
+        responseContainer.innerHTML = `
+            <p><strong>Candidate Name:</strong> ${response.candidate_name || 'N/A'}</p>
+            <p><strong>Score:</strong> ${response.score || 'N/A'}</p>
+            <p><strong>Strengths:</strong> ${response.strengths || 'N/A'}</p>
+            <p><strong>Weaknesses:</strong> ${response.weaknesses || 'N/A'}</p>
+            <p><strong>Analysis:</strong> ${response.analysis || 'N/A'}</p>
+        `;
+    }
+
+    // Example usage (replace with actual response from the Together API)
+    const mockResponse = {
+        candidate_name: "John Doe",
+        score: 85,
+        strengths: "Excellent communication, leadership skills.",
+        weaknesses: "Limited technical certifications.",
+        analysis: "John's resume aligns well with the job description, with strong interpersonal skills and relevant experience."
+    };
+
+    // Simulate displaying the response
+    displayApiResponse(mockResponse);
+
+    </script>
+    <div class="container">
+        <h1>Hire <span>Lens</span></h1>
+        <form action="/upload/" method="post" enctype="multipart/form-data">
+            <label for="files">Upload Resumes (PDFs):</label>
+            <input type="file" id="files" name="files" multiple accept="application/pdf" required>
+            <label for="job-description">Job Description:</label>
+            <textarea id="job-description" name="job_description" rows="4" cols="50" required></textarea>
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+    
+    <div id="bot-usage-instructions" style="margin-top: 30px;" class="container">
+        <!-- Instructions on how to use the bot -->
+        <h3>How to Use the Bot:</h3>
+        <ul style="line-height: 1.8;">
+            <li>Upload resumes in PDF format using choose files. </li>
+            <li>Provide detailed description of the Job Description.</li>
+            <li>Click the "Analyze" button to start Analysis process.</li>
+            <li>The bot will analyze the resume and compare it against the provided job description.</li>
+            <li>Key details such as <strong>Candidate Name</strong>, <strong>Score</strong>, <strong>Strengths</strong>, <strong>Weaknesses</strong>, and a detailed analysis will be displayed here.</li>
+            <li>You can download the analysis in <strong>PDF</strong> formats.</li>
+            <li>Ensure the uploaded resume contains all relevant details for accurate analysis.</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
